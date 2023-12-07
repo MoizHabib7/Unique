@@ -1,0 +1,7 @@
+DOMAIN:-ELECTRONIC E-COMMERCE WEBSITE 
+
+3 USE CASES 
+
+1-USER REGISTERATION AND AUTHENTICATION (Moiz)
+Description: This use case involves the process of users registering on the e-commerce website and 
+authenticating their identities.
