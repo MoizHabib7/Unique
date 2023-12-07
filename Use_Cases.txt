@@ -1,7 +1,6 @@
-
 DOMAIN:-ELECTRONIC E-COMMERCE WEBSITE 
 
-3 USE CASES 
+USE CASES 
 
 1-USER REGISTERATION AND AUTHENTICATION (Moiz)
 Description: This use case involves the process of users registering on the e-commerce website and 
@@ -10,3 +9,8 @@ authenticating their identities.
 2-Product Search and Purchase: (Sanaullah)
 Description: This use case involves the process of users searching for products 
 and making purchases on the e-commerce website.
+
+3-Order Tracking and Customer Support: (Saad)
+Description: This use case involves the process of users tracking their orders and 
+seeking customer support if needed.
+
