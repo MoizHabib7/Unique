@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2023 at 12:32 PM
+
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -44,6 +44,19 @@ CREATE TABLE `registeration` (
 --
 ALTER TABLE `registeration`
   ADD PRIMARY KEY (`Phone number`);
+=======
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `Product_id` int(11) NOT NULL,
+  `Product_name` varchar(45) NOT NULL,
+  `Price` float NOT NULL,
+  `discount` float NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+--- Sanaullah_sql
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
