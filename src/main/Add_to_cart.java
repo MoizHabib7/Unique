@@ -1,15 +1,14 @@
-import java.sql.*;
 package main;
-
+import java.sql.*;
 public class Add_to_cart {
 
 	public static void main(String[] args) {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con =
-			DriverManager.getConnection("jdbc:mysql://localhost:3306/tutorial","root","");
+			DriverManager.getConnection("jdbc:mysql://localhost:3306/sql file","root","");
 			Statement stmt=con.createStatement();
-			ResultSet rs=stmt.executeQuery("select * from teacher");
+			ResultSet rs=stmt.executeQuery("select * from cart");
 
 			while(rs.next())
 			{
