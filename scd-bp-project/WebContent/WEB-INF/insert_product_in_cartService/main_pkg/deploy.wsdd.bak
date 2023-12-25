@@ -1,0 +1,29 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from insert_product_in_cartService WSDL service -->
+
+  <service name="insert_product_in_cart" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main"/>
+      <parameter name="wsdlServiceElement" value="insert_product_in_cartService"/>
+      <parameter name="schemaQualified" value="http://main"/>
+      <parameter name="wsdlServicePort" value="insert_product_in_cart"/>
+      <parameter name="className" value="main_pkg.Insert_product_in_cartSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="insert_product_in_cart"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="main" qname="operNS:main" xmlns:operNS="http://main" soapAction="" >
+        <parameter qname="pns:args" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="main"/>
+
+  </service>
+</deployment>

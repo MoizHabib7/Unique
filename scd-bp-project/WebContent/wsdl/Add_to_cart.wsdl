@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getcartdetails">
+    <complexType>
+     <sequence>
+      <element name="userid" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getcartdetailsResponse">
+    <complexType/>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getcartdetailsResponse">
+
+      <wsdl:part element="impl:getcartdetailsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getcartdetailsRequest">
+
+      <wsdl:part element="impl:getcartdetails" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Add_to_cart">
+
+      <wsdl:operation name="getcartdetails">
+
+         <wsdl:input message="impl:getcartdetailsRequest" name="getcartdetailsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getcartdetailsResponse" name="getcartdetailsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Add_to_cartSoapBinding" type="impl:Add_to_cart">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getcartdetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getcartdetailsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getcartdetailsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Add_to_cartService">
+
+      <wsdl:port binding="impl:Add_to_cartSoapBinding" name="Add_to_cart">
+
+         <wsdlsoap:address location="http://localhost:8080/scd-bp-project/services/Add_to_cart"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
