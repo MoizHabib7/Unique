@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="register_user">
+    <complexType>
+     <sequence>
+      <element name="email" type="xsd:string"/>
+      <element name="name" type="xsd:string"/>
+      <element name="password" type="xsd:string"/>
+      <element name="phone" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="register_userResponse">
+    <complexType>
+     <sequence>
+      <element name="register_userReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="register_userResponse">
+
+      <wsdl:part element="impl:register_userResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="register_userRequest">
+
+      <wsdl:part element="impl:register_user" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Registeration_of_User">
+
+      <wsdl:operation name="register_user">
+
+         <wsdl:input message="impl:register_userRequest" name="register_userRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:register_userResponse" name="register_userResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Registeration_of_UserSoapBinding" type="impl:Registeration_of_User">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="register_user">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="register_userRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="register_userResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Registeration_of_UserService">
+
+      <wsdl:port binding="impl:Registeration_of_UserSoapBinding" name="Registeration_of_User">
+
+         <wsdlsoap:address location="http://localhost:8080/scd-bp-project/services/Registeration_of_User"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

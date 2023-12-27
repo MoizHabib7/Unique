@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <ns1:parameter name="sendXsiTypes" value="true"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -33,17 +33,46 @@
    <ns2:parameter qname="ns1:in0" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns2:operation>
   <ns1:parameter name="allowedMethods" value="main"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Add_to_cart"/>
-  <ns1:parameter name="className" value="main.Add_to_cart"/>
-  <ns1:parameter name="wsdlServicePort" value="Add_to_cart"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Add_to_cart"/>
+  <ns1:parameter name="className" value="main.Add_to_cart"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Add_to_cartService"/>
  </ns1:service>
  <ns1:service name="Version" provider="java:RPC">
   <ns1:parameter name="allowedMethods" value="getVersion"/>
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
+ </ns1:service>
+ <ns1:service name="Login_User" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="login" qname="ns2:login" soapAction="" xmlns:ns2="http://main">
+   <ns1:parameter qname="ns2:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="login"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Login_User"/>
+  <ns1:parameter name="className" value="main.Login_User"/>
+  <ns1:parameter name="wsdlServicePort" value="Login_User"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="Login_UserService"/>
+ </ns1:service>
+ <ns1:service name="Registeration_of_User" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="register_user" qname="ns3:register_user" returnQName="ns3:register_userReturn" returnType="xsd:int" soapAction="" xmlns:ns3="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns3:email" type="xsd:string"/>
+   <ns1:parameter qname="ns3:name" type="xsd:string"/>
+   <ns1:parameter qname="ns3:password" type="xsd:string"/>
+   <ns1:parameter qname="ns3:phone" type="xsd:int"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="register_user"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="Registeration_of_User"/>
+  <ns1:parameter name="className" value="main.Registeration_of_User"/>
+  <ns1:parameter name="wsdlServicePort" value="Registeration_of_User"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="Registeration_of_UserService"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>
