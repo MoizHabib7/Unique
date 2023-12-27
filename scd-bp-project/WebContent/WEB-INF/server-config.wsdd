@@ -73,6 +73,51 @@
   <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Registeration_of_UserService"/>
+ <ns1:service name="buy_product" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="add_to_cart" qname="ns2:add_to_cart" returnQName="ns2:add_to_cartReturn" returnType="xsd:int" soapAction="" xmlns:ns2="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns2:add" type="xsd:string"/>
+   <ns1:parameter qname="ns2:date" type="xsd:string"/>
+   <ns1:parameter qname="ns2:pay" type="xsd:int"/>
+   <ns1:parameter qname="ns2:user" type="xsd:string"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="add_to_cart"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="wsdlPortType" value="buy_product"/>
+  <ns1:parameter name="className" value="main.buy_product"/>
+  <ns1:parameter name="wsdlServicePort" value="buy_product"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="buy_productService"/>
+ </ns1:service>
+ <ns1:service name="Search_product" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="search" qname="ns3:search" soapAction="" xmlns:ns3="http://main">
+   <ns1:parameter qname="ns3:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="search"/>
+  <ns1:parameter name="wsdlPortType" value="Search_product"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Search_product"/>
+  <ns1:parameter name="className" value="main.Search_product"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="Search_productService"/>
+ </ns1:service>
+ <ns1:service name="Cart_Handling" provider="java:RPC" style="wrapped" use="literal">
+  <ns1:operation name="add_to_cart" qname="ns4:add_to_cart" soapAction="" xmlns:ns4="http://main">
+   <ns1:parameter qname="ns4:pro" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns4:pri" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns4:dis" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns4:quan" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+   <ns1:parameter qname="ns4:user" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  </ns1:operation>
+  <ns1:parameter name="allowedMethods" value="add_to_cart"/>
+  <ns1:parameter name="wsdlPortType" value="Cart_Handling"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Cart_Handling"/>
+  <ns1:parameter name="className" value="main.Cart_Handling"/>
+  <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
+  <ns1:parameter name="wsdlServiceElement" value="Cart_HandlingService"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>
