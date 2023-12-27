@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 public class Cart_Handling {
-	public void add_to_cart(String pro,int pri,int dis,int quan,int user) {
+	public int add_to_cart(String pro,int pri,int dis,int quan,int user) {
 
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
@@ -19,6 +19,6 @@ public class Cart_Handling {
 			{
 			System.out.println(e);
 			}
-	
+		return 0;
 	}
 }
