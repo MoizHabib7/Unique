@@ -2,7 +2,7 @@ package main;
 import java.sql.*;
 
 public class buy_product {
-		public int add_to_cart(String add,String date,int pay,String user) {
+		public void add_to_cart(String add,String date,int pay,String user) {
 
 			try{
 				Class.forName("com.mysql.jdbc.Driver");
@@ -16,6 +16,5 @@ public class buy_product {
 				{
 				
 				}
-			return 0;
 		}
 }

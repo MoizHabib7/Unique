@@ -10,7 +10,7 @@
       <parameter name="className" value="main.Cart_Handling"/>
       <parameter name="wsdlPortType" value="Cart_Handling"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://main" name="add_to_cart" qname="operNS:add_to_cart" soapAction="">
+      <operation xmlns:operNS="http://main" xmlns:retNS="http://main" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="add_to_cart" qname="operNS:add_to_cart" returnQName="retNS:add_to_cartReturn" returnType="rtns:int" soapAction="">
         <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pro" type="tns:string"/>
         <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:pri" type="tns:int"/>
         <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:dis" type="tns:int"/>

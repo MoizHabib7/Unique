@@ -10,10 +10,11 @@
       <parameter name="className" value="main.Search_product"/>
       <parameter name="wsdlPortType" value="Search_product"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://main" name="search" qname="operNS:search" soapAction="">
+      <operation xmlns:operNS="http://main" xmlns:retNS="http://main" xmlns:rtns="http://main" name="search" qname="operNS:search" returnQName="retNS:searchReturn" returnType="rtns:Searching" soapAction="">
         <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="search"/>
 
+      <typeMapping xmlns:ns="http://main" qname="ns:Searching" type="java:main.Searching" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
   </service>
 </deployment>

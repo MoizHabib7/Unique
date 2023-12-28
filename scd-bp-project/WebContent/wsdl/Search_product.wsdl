@@ -12,8 +12,20 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     </complexType>
    </element>
    <element name="searchResponse">
-    <complexType/>
+    <complexType>
+     <sequence>
+      <element name="searchReturn" type="impl:Searching"/>
+     </sequence>
+    </complexType>
    </element>
+   <complexType name="Searching">
+    <sequence>
+     <element name="id" type="xsd:int"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="price" type="xsd:int"/>
+     <element name="discount" type="xsd:int"/>
+    </sequence>
+   </complexType>
   </schema>
  </wsdl:types>
 

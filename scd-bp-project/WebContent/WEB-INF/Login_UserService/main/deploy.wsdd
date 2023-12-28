@@ -10,7 +10,7 @@
       <parameter name="className" value="main.Login_User"/>
       <parameter name="wsdlPortType" value="Login_User"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation xmlns:operNS="http://main" name="login" qname="operNS:login" soapAction="">
+      <operation xmlns:operNS="http://main" xmlns:retNS="http://main" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="login" qname="operNS:login" returnQName="retNS:loginReturn" returnType="rtns:int" soapAction="">
         <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
       </operation>
       <parameter name="allowedMethods" value="login"/>

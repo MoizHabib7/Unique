@@ -20,10 +20,18 @@
       <parameter name="className" value="main.Search_productSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="Search_product"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="search" qname="operNS:search" xmlns:operNS="http://main" soapAction="" >
+      <operation name="search" qname="operNS:search" xmlns:operNS="http://main" returnQName="retNS:searchReturn" xmlns:retNS="http://main" returnType="rtns:Searching" xmlns:rtns="http://main" soapAction="" >
         <parameter qname="pns:id" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
       <parameter name="allowedMethods" value="search"/>
 
+      <typeMapping
+        xmlns:ns="http://main"
+        qname="ns:Searching"
+        type="java:main.Searching"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
   </service>
 </deployment>

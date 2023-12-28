@@ -15,11 +15,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     </complexType>
    </element>
    <element name="add_to_cartResponse">
-    <complexType>
-     <sequence>
-      <element name="add_to_cartReturn" type="xsd:int"/>
-     </sequence>
-    </complexType>
+    <complexType/>
    </element>
   </schema>
  </wsdl:types>
