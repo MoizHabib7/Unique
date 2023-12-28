@@ -9,7 +9,7 @@ public class buy_product {
 				Connection con =
 				DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","");
 				Statement stmt=con.createStatement();
-				stmt.executeUpdate("INSERT INTO `order`(`address`, `date_of_delivery`, `payment mode`, `user_name`) VALUES ('"+add+"',"+date+","+pay+","+user+");");
+				stmt.executeUpdate("INSERT INTO order(`address`, `date_of_delivery`, `payment mode`, `user_name`) VALUES ('"+add+"',"+date+","+pay+","+user+");");
 
 				con.close();
 				} catch(Exception e)
