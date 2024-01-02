@@ -109,8 +109,8 @@
   <ns1:parameter name="wsdlServiceElement" value="Cart_HandlingService"/>
  </ns1:service>
  <ns1:service name="order_tracking" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="track" qname="ns3:track" returnQName="ns3:trackReturn" returnType="ns3:Order" soapAction="" xmlns:ns3="http://main">
-   <ns1:parameter qname="ns3:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="track" qname="ns7:track" returnQName="ns7:trackReturn" returnType="ns7:Order" soapAction="" xmlns:ns7="http://main">
+   <ns1:parameter qname="ns7:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="track"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
@@ -120,7 +120,7 @@
   <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="order_trackingService"/>
-  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns4:Order" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.Order" xmlns:ns4="http://main"/>
+  <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns8:Order" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.Order" xmlns:ns8="http://main"/>
  </ns1:service>
  <ns1:transport name="http">
   <ns1:requestFlow>
