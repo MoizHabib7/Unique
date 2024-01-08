@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://main" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://main" xmlns:intf="http://main" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://main" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="dashboard">
+    <complexType/>
+   </element>
+   <element name="dashboardResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="dashboardReturn" type="impl:Searching"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="Searching">
+    <sequence>
+     <element name="id" type="xsd:int"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+     <element name="price" type="xsd:int"/>
+     <element name="discount" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="dashboardResponse">
+
+      <wsdl:part element="impl:dashboardResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="dashboardRequest">
+
+      <wsdl:part element="impl:dashboard" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Get_products">
+
+      <wsdl:operation name="dashboard">
+
+         <wsdl:input message="impl:dashboardRequest" name="dashboardRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:dashboardResponse" name="dashboardResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Get_productsSoapBinding" type="impl:Get_products">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="dashboard">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="dashboardRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="dashboardResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Get_productsService">
+
+      <wsdl:port binding="impl:Get_productsSoapBinding" name="Get_products">
+
+         <wsdlsoap:address location="http://localhost:8080/scd-bp-project/services/Get_products"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,6 +1,6 @@
 package main;
 import java.sql.*;
-public class order_tracking {
+public class Order_tracking {
 		public Order track(int id) {
 			Order order = null;
 			

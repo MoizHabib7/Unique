@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from order_trackingService WSDL service -->
+  <!-- Services from Order_trackingService WSDL service -->
 
-  <service name="order_tracking" provider="java:RPC" style="wrapped" use="literal">
+  <service name="Order_tracking" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://main"/>
-      <parameter name="wsdlServiceElement" value="order_trackingService"/>
+      <parameter name="wsdlServiceElement" value="Order_trackingService"/>
       <parameter name="schemaQualified" value="http://main"/>
-      <parameter name="wsdlServicePort" value="order_tracking"/>
-      <parameter name="className" value="main.order_tracking"/>
-      <parameter name="wsdlPortType" value="order_tracking"/>
+      <parameter name="wsdlServicePort" value="Order_tracking"/>
+      <parameter name="className" value="main.Order_tracking"/>
+      <parameter name="wsdlPortType" value="Order_tracking"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://main" xmlns:retNS="http://main" xmlns:rtns="http://main" name="track" qname="operNS:track" returnQName="retNS:trackReturn" returnType="rtns:Order" soapAction="">
         <parameter xmlns:pns="http://main" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>

@@ -10,15 +10,15 @@
     xmlns="http://xml.apache.org/axis/wsdd/"
     xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from order_trackingService WSDL service -->
+  <!-- Services from Order_trackingService WSDL service -->
 
-  <service name="order_tracking" provider="java:RPC" style="wrapped" use="literal">
+  <service name="Order_tracking" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://main"/>
-      <parameter name="wsdlServiceElement" value="order_trackingService"/>
+      <parameter name="wsdlServiceElement" value="Order_trackingService"/>
       <parameter name="schemaQualified" value="http://main"/>
-      <parameter name="wsdlServicePort" value="order_tracking"/>
+      <parameter name="wsdlServicePort" value="Order_tracking"/>
       <parameter name="className" value="main.Order_trackingSoapBindingImpl"/>
-      <parameter name="wsdlPortType" value="order_tracking"/>
+      <parameter name="wsdlPortType" value="Order_tracking"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation name="track" qname="operNS:track" xmlns:operNS="http://main" returnQName="retNS:trackReturn" xmlns:retNS="http://main" returnType="rtns:Order" xmlns:rtns="http://main" soapAction="" >
         <parameter qname="pns:id" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>

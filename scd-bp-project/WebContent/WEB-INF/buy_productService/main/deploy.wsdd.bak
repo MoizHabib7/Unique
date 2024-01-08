@@ -10,23 +10,23 @@
     xmlns="http://xml.apache.org/axis/wsdd/"
     xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
 
-  <!-- Services from buy_productService WSDL service -->
+  <!-- Services from Buy_productService WSDL service -->
 
-  <service name="buy_product" provider="java:RPC" style="wrapped" use="literal">
+  <service name="Buy_product" provider="java:RPC" style="wrapped" use="literal">
       <parameter name="wsdlTargetNamespace" value="http://main"/>
-      <parameter name="wsdlServiceElement" value="buy_productService"/>
+      <parameter name="wsdlServiceElement" value="Buy_productService"/>
       <parameter name="schemaQualified" value="http://main"/>
-      <parameter name="wsdlServicePort" value="buy_product"/>
+      <parameter name="wsdlServicePort" value="Buy_product"/>
       <parameter name="className" value="main.Buy_productSoapBindingImpl"/>
-      <parameter name="wsdlPortType" value="buy_product"/>
+      <parameter name="wsdlPortType" value="Buy_product"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="add_to_cart" qname="operNS:add_to_cart" xmlns:operNS="http://main" soapAction="" >
+      <operation name="create_order" qname="operNS:create_order" xmlns:operNS="http://main" soapAction="" >
         <parameter qname="pns:add" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:date" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:pay" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:user" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="add_to_cart"/>
+      <parameter name="allowedMethods" value="create_order"/>
 
   </service>
 </deployment>
