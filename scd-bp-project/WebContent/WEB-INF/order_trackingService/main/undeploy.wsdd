@@ -9,7 +9,7 @@
 <undeployment
     xmlns="http://xml.apache.org/axis/wsdd/">
 
-  <!-- Services from order_trackingService WSDL service -->
+  <!-- Services from Order_trackingService WSDL service -->
 
-  <service name="order_tracking"/>
+  <service name="Order_tracking"/>
 </undeployment>
