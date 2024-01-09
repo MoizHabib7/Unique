@@ -9,7 +9,7 @@
 <undeployment
     xmlns="http://xml.apache.org/axis/wsdd/">
 
-  <!-- Services from Buy_productService WSDL service -->
+  <!-- Services from OrderService WSDL service -->
 
-  <service name="Buy_product"/>
+  <service name="Order"/>
 </undeployment>

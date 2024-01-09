@@ -1,8 +1,8 @@
 package main;
 import java.sql.*;
 
-public class buy_product {
-		public void add_to_cart(String add,String date,int pay,String user) {
+public class Buy_product {
+		public void create_order(String add,String date,int pay,String user) {
 			try{
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection con =

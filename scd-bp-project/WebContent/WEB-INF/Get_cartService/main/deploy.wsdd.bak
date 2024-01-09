@@ -1,0 +1,37 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from Get_cartService WSDL service -->
+
+  <service name="Get_cart" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://main"/>
+      <parameter name="wsdlServiceElement" value="Get_cartService"/>
+      <parameter name="schemaQualified" value="http://main"/>
+      <parameter name="wsdlServicePort" value="Get_cart"/>
+      <parameter name="className" value="main.Get_cartSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Get_cart"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="cart" qname="operNS:cart" xmlns:operNS="http://main" returnQName="retNS:cartReturn" xmlns:retNS="http://main" returnType="rtns:Searching" xmlns:rtns="http://main" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="cart"/>
+
+      <typeMapping
+        xmlns:ns="http://main"
+        qname="ns:Searching"
+        type="java:main.Searching"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
