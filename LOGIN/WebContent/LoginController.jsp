@@ -14,7 +14,11 @@
     response.setContentType("text/html;charset=UTF-8");
 
     if (storedPassword != 0 && storedPassword == Integer.parseInt(password)) {
-        out.println("<h2>Login Successful!</h2>");
+    	//int Ident = new int();
+    	session.setAttribute("myVariable", userId);
+    	response.sendRedirect("dashboard.jsp");
+    	
+    	//out.println("<h2>Login Successful!</h2>");
     } else {
         out.println("<h2>Login Failed. Invalid User ID or Password.</h2>");
     }

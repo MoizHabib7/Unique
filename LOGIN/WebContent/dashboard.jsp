@@ -1,7 +1,6 @@
 <%@ page import="main.Search_product"%>
 <%@page import="main.Searching"%>
 <%@page import="main.Cart_Handling"%>
-
 <%@page import="main.Get_products"%>
 <%@page import="main.Search_productProxy"%>
 <%@page import="main.Get_productsProxy"%>
@@ -20,7 +19,7 @@
     <nav>
         <ul>
             <li><a href="dashboard.jsp">dashboard</a></li>
-            <li><a href="track order">track order</a></li>
+            <li><a href="track order.jspr">track order</a></li>
             <li><a href="cart.jsp">cart</a></li>
         </ul>
     </nav>

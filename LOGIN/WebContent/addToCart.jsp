@@ -18,7 +18,9 @@
     // Call the Cart_Handling class to add the product to the cart
     Cart_Handling cartHandler = new Cart_HandlingProxy().getCart_Handling();
     request.getParameter("price"); 
-    cartHandler.add_to_cart(request.getParameter("name"),Integer.parseInt(request.getParameter("price")) , Integer.parseInt(request.getParameter("discount")), quantity,1); // getUserId() needs to be implemented
+    Integer i = (Integer) session.getAttribute("myVariable");
+    //userid id= session.getAttribute("myVariable");
+    cartHandler.add_to_cart(request.getParameter("name"),Integer.parseInt(request.getParameter("price")) , Integer.parseInt(request.getParameter("discount")), quantity,i); // getUserId() needs to be implemented
 	
     // Redirect back to the dashboard after adding to the cart
     response.sendRedirect("dashboard.jsp");

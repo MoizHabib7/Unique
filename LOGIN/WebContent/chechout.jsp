@@ -12,7 +12,7 @@
     <nav>
         <ul>
             <li><a href="dashboard.jsp">dashboard</a></li>
-            <li><a href="#track order">track order</a></li>
+            <li><a href="track order.jsp">track order</a></li>
             <li><a href="cart.jsp">cart</a></li>
         </ul>
     </nav>
@@ -22,9 +22,11 @@
     <%-- Fetch cart items from the database using the Get_cart class --%>
     <%
         // Assuming userId is obtained from your session or request parameter
-        int userId = 1; // Replace with the actual user ID
+       // int userId = 1; // Replace with the actual user ID
+       
+    	Integer i = (Integer) session.getAttribute("myVariable");
         Get_cart cartService = new Get_cartProxy().getGet_cart();
-        Searching[] cartItems = cartService.cart(userId);
+        Searching[] cartItems = cartService.cart(i);
     %>
 
     <%-- Display cart items in a table --%>

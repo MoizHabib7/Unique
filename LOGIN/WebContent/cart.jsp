@@ -13,7 +13,7 @@
     <nav>
         <ul>
             <li><a href="dashboard.jsp">dashboard</a></li>
-            <li><a href="#track order">track order</a></li>
+            <li><a href="track order.jsp">track order</a></li>
             <li><a href="cart.jsp">cart</a></li>
         </ul>
     </nav>
@@ -45,7 +45,10 @@
                 <td><%= item.getDiscount() %></td>
                 
             </tr>
-            <button href="checkout.jsp"></button>
+         <button>
+    		<a href="checkout.jsp">Buy Product</a>
+		</button>
+            
         <% } %>
     </table>
 

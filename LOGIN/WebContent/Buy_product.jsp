@@ -29,11 +29,13 @@
         String deliveryDate = sdf.format(calendar.getTime());
 
         // Assuming userId is obtained from your session or request parameter
-        String userId = "1"; 
-
+        
+		Integer i = (Integer) session.getAttribute("myVariable");
+  	    String stringValue = (i != null) ? i.toString() : null;        //String userId = "1"; 
+		
         // Save order details to the database
         Buy_productProxy buyProductProxy = new Buy_productProxy();
-        buyProductProxy.getBuy_product().create_order("guhjtgu", deliveryDate, calculatedPrice, userId);
+        buyProductProxy.getBuy_product().create_order("address", deliveryDate, calculatedPrice, stringValue);
 
         // Display success message and order details
 %>
