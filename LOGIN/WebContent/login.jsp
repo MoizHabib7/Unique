@@ -1,17 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login Panel</title>
 </head>
 <body>
-    <form action="">
-        <input type="email" name="" id="">
-        <input type="password" name="" id="">
-        <button type="submit">login</button>
+    <h2>Login Panel</h2>
+    
+    <form action="LoginController.jsp" method="post">
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Login">
     </form>
 </body>
 </html>

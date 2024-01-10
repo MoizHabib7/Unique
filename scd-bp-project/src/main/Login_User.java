@@ -9,6 +9,7 @@ public class Login_User {
 			DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","");
 			Statement stmt=con.createStatement();
 			ResultSet rs=stmt.executeQuery("SELECT Password FROM `registeration` WHERE User_ID="+id+"");
+			rs.next();
 			//System.out.println("Password: " + rs.getInt(1));
 			//return l;
 			login=rs.getInt(1);
