@@ -16,10 +16,10 @@ public class Order_tracking {
 				order = new Order();
 				
 				order.id = rs.getInt(1);
-				order.name = rs.getString(2);
+				order.name = rs.getString(3);
 				order.address = rs.getString(3);
-				order.dateOfDelivery = rs.getString(4);
-				order.payment = rs.getInt(5);
+				order.dateOfDelivery = rs.getString(5);
+				order.payment = rs.getInt(6);
 
 				con.close();
 			}

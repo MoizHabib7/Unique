@@ -13,7 +13,7 @@
     <nav>
         <ul>
             <li><a href="dashboard.jsp">dashboard</a></li>
-            <li><a href="track order.jsp">track order</a></li>
+            <li><a href="trackOrder.jsp">track order</a></li>
             <li><a href="cart.jsp">cart</a></li>
         </ul>
     </nav>
@@ -46,7 +46,7 @@
                 
             </tr>
          <button>
-    		<a href="checkout.jsp">Buy Product</a>
+    		<a href="chechout.jsp">Buy Product</a>
 		</button>
             
         <% } %>

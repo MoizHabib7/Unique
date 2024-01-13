@@ -19,7 +19,7 @@
     <nav>
         <ul>
             <li><a href="dashboard.jsp">dashboard</a></li>
-            <li><a href="track order.jspr">track order</a></li>
+            <li><a href="trackOrder.jsp">track order</a></li>
             <li><a href="cart.jsp">cart</a></li>
         </ul>
     </nav>

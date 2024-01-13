@@ -22,11 +22,10 @@
        if (order != null) { %>
 
         <p>Order ID: <%= order.getId() %></p>
-        <p>Name: <%= order.getName() %></p>
-        <p>Address: <%= order.getAddress() %></p>
+        <p>Name: <%= order.getName()%></p>
         <p>Date of Delivery: <%= order.getDateOfDelivery() %></p>
-        <p>Payment: <%= order.getPayment() %></p>
-
+        <p>payment: <%= order.getPayment() %></p>
+       
     <% } else { %>
 
         <p>No order found with ID <%= orderId %></p>

@@ -12,7 +12,7 @@
     <nav>
         <ul>
             <li><a href="dashboard.jsp">dashboard</a></li>
-            <li><a href="track order.jsp">track order</a></li>
+            <li><a href="trackOrder.jsp">track order</a></li>
             <li><a href="cart.jsp">cart</a></li>
         </ul>
     </nav>
@@ -23,10 +23,10 @@
     <%
         // Assuming userId is obtained from your session or request parameter
        // int userId = 1; // Replace with the actual user ID
-       
-    	Integer i = (Integer) session.getAttribute("myVariable");
+       int userID =(Integer)(session.getAttribute("myVariable"));
+    	//int userID = Integer.parseInt((String)session.getAttribute("myVariable"));
         Get_cart cartService = new Get_cartProxy().getGet_cart();
-        Searching[] cartItems = cartService.cart(i);
+        Searching[] cartItems = cartService.cart(userID);
     %>
 
     <%-- Display cart items in a table --%>

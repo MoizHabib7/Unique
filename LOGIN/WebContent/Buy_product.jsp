@@ -50,7 +50,7 @@
     <h2>Order Confirmation</h2>
 
     <p>Thank you for your order!</p>
-    <p>Product: <%= name %></p>
+    <p>Product owner: <%= name %></p>
     <p>Calculated Price: <%= calculatedPrice %></p>
     <p>Estimated Date of Delivery: <%= deliveryDate %></p>
 </body>

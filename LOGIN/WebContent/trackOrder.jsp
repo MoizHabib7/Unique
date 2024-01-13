@@ -7,6 +7,13 @@
     <title>Track Order</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="dashboard.jsp">dashboard</a></li>
+            <li><a href="trackOrder.jsp">track order</a></li>
+            <li><a href="cart.jsp">cart</a></li>
+        </ul>
+    </nav>
     <h2>Track Your Order</h2>
 
     <form action="trackOrderResult.jsp" method="post">
