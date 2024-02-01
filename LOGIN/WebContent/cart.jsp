@@ -23,7 +23,7 @@
     <%-- Fetch cart items from the database using the Get_cart class --%>
     <%
         // Assuming userId is obtained from your session or request parameter
-        int userId = 1; // Replace with the actual user ID
+        int userId = (Integer)session.getAttribute("myVariable");
         Get_cart cartService = new Get_cartProxy().getGet_cart();
         Searching[] cartItems = cartService.cart(userId);
     %>
@@ -35,21 +35,23 @@
             <th>Name</th>
             <th>Price</th>
             <th>Discount</th>
-            
+            <th>Action</th>
         </tr>
-        <% for (Searching item : cartItems) { %>
-            <tr>
-                <td><%= item.getId() %></td>
-                <td><%= item.getName() %></td>
-                <td><%= item.getPrice() %></td>
-                <td><%= item.getDiscount() %></td>
-                
-            </tr>
-         <button>
-    		<a href="chechout.jsp">Buy Product</a>
-		</button>
-            
-        <% } %>
+        <% if (cartItems != null) {
+            for (Searching item : cartItems) { %>
+                <tr>
+                    <td><%= item.getId() %></td>
+                    <td><%= item.getName() %></td>
+                    <td><%= item.getPrice() %></td>
+                    <td><%= item.getDiscount() %></td>
+                    <td>
+                        <button>
+                            <a href="chechout.jsp">Buy Product</a>
+                        </button>
+                    </td>
+                </tr>
+            <% }
+        } %>
     </table>
 
 </body>
