@@ -42,9 +42,16 @@
         <%
             if (request.getParameter("productId") != null) {
                 // If a product ID is provided in the search form, call the search web service
-                int searchProductId = Integer.parseInt(request.getParameter("productId"));
-                Search_product searchProduct = new Search_productProxy().getSearch_product();
-                Searching searchedProduct = searchProduct.search(searchProductId);
+                String productId = request.getParameter("productId");
+                if(productId.isEmpty())
+                {
+                	out.println("Product ID cannot be empty.");
+                }
+                else
+                {
+	                int searchProductId = Integer.parseInt(productId);
+	                Search_product searchProduct = new Search_productProxy().getSearch_product();
+	                Searching searchedProduct = searchProduct.search(searchProductId);
         %>
                 <!-- Display searched product -->
                 <tr>
@@ -56,6 +63,7 @@
                        
                 </tr>
         <%
+                }
             } else {
                 // If no product ID is provided, display all products
                 Get_products products = new Get_productsProxy().getGet_products();
