@@ -15,7 +15,11 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
     </complexType>
    </element>
    <element name="create_orderResponse">
-    <complexType/>
+    <complexType>
+     <sequence>
+      <element name="create_orderReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
    </element>
   </schema>
  </wsdl:types>

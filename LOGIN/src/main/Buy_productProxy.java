@@ -44,10 +44,10 @@ public class Buy_productProxy implements main.Buy_product {
     return buy_product;
   }
   
-  public void create_order(java.lang.String add, java.lang.String date, int pay, java.lang.String user) throws java.rmi.RemoteException{
+  public int create_order(java.lang.String add, java.lang.String date, int pay, java.lang.String user) throws java.rmi.RemoteException{
     if (buy_product == null)
       _initBuy_productProxy();
-    buy_product.create_order(add, date, pay, user);
+    return buy_product.create_order(add, date, pay, user);
   }
   
   

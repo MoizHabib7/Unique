@@ -8,5 +8,5 @@
 package main;
 
 public interface Buy_product extends java.rmi.Remote {
-    public void create_order(java.lang.String add, java.lang.String date, int pay, java.lang.String user) throws java.rmi.RemoteException;
+    public int create_order(java.lang.String add, java.lang.String date, int pay, java.lang.String user) throws java.rmi.RemoteException;
 }

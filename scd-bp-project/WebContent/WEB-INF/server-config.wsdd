@@ -7,8 +7,8 @@
   <ns1:parameter name="dotNetSoapEncFix" value="true"/>
   <ns1:parameter name="enableNamespacePrefixOptimization" value="false"/>
   <ns1:parameter name="sendXMLDeclaration" value="true"/>
-  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:parameter name="sendXsiTypes" value="true"/>
+  <ns1:parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <ns1:requestFlow>
    <ns1:handler type="java:org.apache.axis.handlers.JWSHandler">
     <ns1:parameter name="scope" value="session"/>
@@ -24,10 +24,10 @@
  <ns1:handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
  <ns1:service name="Order" provider="java:RPC" style="document" use="literal">
   <ns1:parameter name="allowedMethods" value="*"/>
-  <ns1:parameter name="wsdlPortType" value="Order"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="wsdlServicePort" value="Order"/>
+  <ns1:parameter name="wsdlPortType" value="Order"/>
   <ns1:parameter name="className" value="main.Order"/>
+  <ns1:parameter name="wsdlServicePort" value="Order"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="OrderService"/>
  </ns1:service>
@@ -42,11 +42,11 @@
    <ns2:parameter qname="ns1:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns2:operation>
   <ns1:parameter name="allowedMethods" value="track"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Order_tracking"/>
-  <ns1:parameter name="className" value="main.Order_tracking"/>
-  <ns1:parameter name="wsdlServicePort" value="Order_tracking"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Order_tracking"/>
+  <ns1:parameter name="className" value="main.Order_tracking"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Order_trackingService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns2:Order" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.Order" xmlns:ns2="http://main"/>
@@ -60,38 +60,38 @@
    <ns1:parameter qname="ns3:id" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="login"/>
-  <ns1:parameter name="wsdlPortType" value="Login_User"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Login_User"/>
+  <ns1:parameter name="wsdlPortType" value="Login_User"/>
   <ns1:parameter name="className" value="main.Login_User"/>
+  <ns1:parameter name="wsdlServicePort" value="Login_User"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Login_UserService"/>
  </ns1:service>
  <ns1:service name="Buy_product" provider="java:RPC" style="wrapped" use="literal">
-  <ns1:operation name="create_order" qname="ns4:create_order" soapAction="" xmlns:ns4="http://main">
-   <ns1:parameter qname="ns4:add" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-   <ns1:parameter qname="ns4:date" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-   <ns1:parameter qname="ns4:pay" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
-   <ns1:parameter qname="ns4:user" type="xsd:string" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
+  <ns1:operation name="create_order" qname="ns4:create_order" returnQName="ns4:create_orderReturn" returnType="xsd:int" soapAction="" xmlns:ns4="http://main" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <ns1:parameter qname="ns4:add" type="xsd:string"/>
+   <ns1:parameter qname="ns4:date" type="xsd:string"/>
+   <ns1:parameter qname="ns4:pay" type="xsd:int"/>
+   <ns1:parameter qname="ns4:user" type="xsd:string"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="create_order"/>
-  <ns1:parameter name="wsdlPortType" value="Buy_product"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Buy_product"/>
+  <ns1:parameter name="wsdlPortType" value="Buy_product"/>
   <ns1:parameter name="className" value="main.Buy_product"/>
+  <ns1:parameter name="wsdlServicePort" value="Buy_product"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Buy_productService"/>
  </ns1:service>
  <ns1:service name="Get_products" provider="java:RPC" style="wrapped" use="literal">
   <ns1:operation name="dashboard" qname="ns5:dashboard" returnQName="ns5:dashboardReturn" returnType="ns5:Searching" soapAction="" xmlns:ns5="http://main"/>
   <ns1:parameter name="allowedMethods" value="dashboard"/>
-  <ns1:parameter name="wsdlPortType" value="Get_products"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Get_products"/>
+  <ns1:parameter name="wsdlPortType" value="Get_products"/>
   <ns1:parameter name="className" value="main.Get_products"/>
+  <ns1:parameter name="wsdlServicePort" value="Get_products"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Get_productsService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns6:Searching" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.Searching" xmlns:ns6="http://main"/>
@@ -101,11 +101,11 @@
    <ns1:parameter qname="ns7:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="search"/>
-  <ns1:parameter name="wsdlPortType" value="Search_product"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Search_product"/>
+  <ns1:parameter name="wsdlPortType" value="Search_product"/>
   <ns1:parameter name="className" value="main.Search_product"/>
+  <ns1:parameter name="wsdlServicePort" value="Search_product"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Search_productService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns8:Searching" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.Searching" xmlns:ns8="http://main"/>
@@ -118,11 +118,11 @@
    <ns1:parameter qname="ns9:phone" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="register_user"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Registeration_of_User"/>
-  <ns1:parameter name="className" value="main.Registeration_of_User"/>
-  <ns1:parameter name="wsdlServicePort" value="Registeration_of_User"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Registeration_of_User"/>
+  <ns1:parameter name="className" value="main.Registeration_of_User"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Registeration_of_UserService"/>
  </ns1:service>
@@ -135,11 +135,11 @@
    <ns1:parameter qname="ns10:user" type="xsd:int"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="add_to_cart"/>
-  <ns1:parameter name="wsdlPortType" value="Cart_Handling"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
-  <ns1:parameter name="schemaQualified" value="http://main"/>
-  <ns1:parameter name="wsdlServicePort" value="Cart_Handling"/>
+  <ns1:parameter name="wsdlPortType" value="Cart_Handling"/>
   <ns1:parameter name="className" value="main.Cart_Handling"/>
+  <ns1:parameter name="wsdlServicePort" value="Cart_Handling"/>
+  <ns1:parameter name="schemaQualified" value="http://main"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Cart_HandlingService"/>
  </ns1:service>
@@ -148,11 +148,11 @@
    <ns1:parameter qname="ns11:id" type="xsd:int" xmlns:xsd="http://www.w3.org/2001/XMLSchema"/>
   </ns1:operation>
   <ns1:parameter name="allowedMethods" value="cart"/>
-  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="Get_cart"/>
-  <ns1:parameter name="className" value="main.Get_cart"/>
-  <ns1:parameter name="wsdlServicePort" value="Get_cart"/>
+  <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="schemaQualified" value="http://main"/>
+  <ns1:parameter name="wsdlServicePort" value="Get_cart"/>
+  <ns1:parameter name="className" value="main.Get_cart"/>
   <ns1:parameter name="wsdlTargetNamespace" value="http://main"/>
   <ns1:parameter name="wsdlServiceElement" value="Get_cartService"/>
   <ns1:typeMapping deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="" qname="ns12:Searching" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" type="java:main.Searching" xmlns:ns12="http://main"/>

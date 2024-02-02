@@ -17,11 +17,15 @@
 
         // Perform user registration using the Registeration_of_User class
         Registeration_of_User registration = new Registeration_of_UserProxy().getRegisteration_of_User();
-        int result = registration.register_user(email, name, password, phone);
+        int userID = registration.register_user(email, name, password, phone);
 
-        if (result == 0) {
-            // If registration is successful, redirect to a success page or login page
-            response.sendRedirect("login.jsp");
+        if (userID > 0) {
+            // If registration is successful, display the user ID
+    %>
+            <h2>Registration Successful!</h2>
+            <p>Your User ID is: <%= userID %></p>
+            <p><a href="login.jsp">Login</a></p>
+    <%
         } else {
             // If registration fails, redirect back to the signup page with an error message
             response.sendRedirect("signup.jsp?signupFailed=true");

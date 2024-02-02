@@ -1,26 +1,21 @@
-<%@page import="main.Buy_productProxy"%>
+
+
+<%@page import="main.*"%>
+<%@page import="main.Buy_product"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.util.Calendar, java.text.SimpleDateFormat" %>
 <%@ page import="main.Searching" %>
 
 <%
-    // Check if productId, name, price, and discount are provided in the request
-    String productIdParam ="0";
+    // Check if name and total price are provided in the request
     String name = request.getParameter("name");
     String priceParam = request.getParameter("totalPrice");
-    String discountParam ="0";
 
-    if (productIdParam != null && name != null && priceParam != null && discountParam != null) {
-        int productId = Integer.parseInt(productIdParam);
+    if (name != null && priceParam != null) {
         int price = Integer.parseInt(priceParam);
-        int discount = Integer.parseInt(discountParam);
-
-        // Fetch product details using the productId
-       
-        Searching[] product = new main.Get_cartProxy().getGet_cart().cart(productId);
 
         // Calculate total payment
-        int calculatedPrice = (price -discount);
+        int calculatedPrice = price;
 
         // Calculate delivery date (assuming it's 5 days from the current date)
         Calendar calendar = Calendar.getInstance();
@@ -29,14 +24,14 @@
         String deliveryDate = sdf.format(calendar.getTime());
 
         // Assuming userId is obtained from your session or request parameter
-        
-		Integer i = (Integer) session.getAttribute("myVariable");
-  	    String stringValue = (i != null) ? i.toString() : null;        //String userId = "1"; 
-		
-        // Save order details to the database
-        Buy_productProxy buyProductProxy = new Buy_productProxy();
-        buyProductProxy.getBuy_product().create_order("address", deliveryDate, calculatedPrice, stringValue);
+        Integer userId = (Integer) session.getAttribute("myVariable");
+        String stringValue = (userId != null) ? userId.toString() : null;
 
+        // Save order details to the database
+        Buy_product buy_product = new Buy_productProxy().getBuy_product();
+		//Buy_productProxy
+        //int orderID = buyProductProxy.getBuy_product().create_order("address", deliveryDate, calculatedPrice, stringValue);
+        int orderID =buy_product.create_order("address", deliveryDate, calculatedPrice, stringValue);
         // Display success message and order details
 %>
 <!DOCTYPE html>
@@ -50,6 +45,7 @@
     <h2>Order Confirmation</h2>
 
     <p>Thank you for your order!</p>
+    <p>Order ID: <%= orderID %></p>
     <p>Product owner: <%= name %></p>
     <p>Calculated Price: <%= calculatedPrice %></p>
     <p>Estimated Date of Delivery: <%= deliveryDate %></p>

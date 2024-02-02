@@ -20,7 +20,7 @@
       <parameter name="className" value="main.Buy_productSoapBindingImpl"/>
       <parameter name="wsdlPortType" value="Buy_product"/>
       <parameter name="typeMappingVersion" value="1.2"/>
-      <operation name="create_order" qname="operNS:create_order" xmlns:operNS="http://main" soapAction="" >
+      <operation name="create_order" qname="operNS:create_order" xmlns:operNS="http://main" returnQName="retNS:create_orderReturn" xmlns:retNS="http://main" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
         <parameter qname="pns:add" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:date" xmlns:pns="http://main" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:pay" xmlns:pns="http://main" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
