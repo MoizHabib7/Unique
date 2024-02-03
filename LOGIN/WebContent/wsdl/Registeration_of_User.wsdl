@@ -10,7 +10,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
       <element name="email" type="xsd:string"/>
       <element name="name" type="xsd:string"/>
       <element name="password" type="xsd:string"/>
-      <element name="phone" type="xsd:int"/>
+      <element name="phone" type="xsd:long"/>
      </sequence>
     </complexType>
    </element>

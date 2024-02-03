@@ -44,7 +44,7 @@ public class Registeration_of_UserProxy implements main.Registeration_of_User {
     return registeration_of_User;
   }
   
-  public int register_user(java.lang.String email, java.lang.String name, java.lang.String password, int phone) throws java.rmi.RemoteException{
+  public int register_user(java.lang.String email, java.lang.String name, java.lang.String password, long phone) throws java.rmi.RemoteException{
     if (registeration_of_User == null)
       _initRegisteration_of_UserProxy();
     return registeration_of_User.register_user(email, name, password, phone);

@@ -22,7 +22,6 @@
        if (order != null) { %>
 
         <p>Order ID: <%= order.getId() %></p>
-        <p>Name: <%= order.getName()%></p>
         <p>Date of Delivery: <%= order.getDateOfDelivery() %></p>
         <p>payment: <%= order.getPayment() %></p>
        

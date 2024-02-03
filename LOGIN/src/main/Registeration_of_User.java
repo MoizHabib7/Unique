@@ -8,5 +8,5 @@
 package main;
 
 public interface Registeration_of_User extends java.rmi.Remote {
-    public int register_user(java.lang.String email, java.lang.String name, java.lang.String password, int phone) throws java.rmi.RemoteException;
+    public int register_user(java.lang.String email, java.lang.String name, java.lang.String password, long phone) throws java.rmi.RemoteException;
 }

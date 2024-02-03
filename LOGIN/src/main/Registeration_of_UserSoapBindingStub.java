@@ -31,7 +31,7 @@ public class Registeration_of_UserSoapBindingStub extends org.apache.axis.client
         oper.addParameter(param);
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "password"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "phone"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://main", "phone"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"), long.class, false, false);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         oper.setReturnClass(int.class);
@@ -93,7 +93,7 @@ public class Registeration_of_UserSoapBindingStub extends org.apache.axis.client
         }
     }
 
-    public int register_user(java.lang.String email, java.lang.String name, java.lang.String password, int phone) throws java.rmi.RemoteException {
+    public int register_user(java.lang.String email, java.lang.String name, java.lang.String password, long phone) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -109,7 +109,7 @@ public class Registeration_of_UserSoapBindingStub extends org.apache.axis.client
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {email, name, password, new java.lang.Integer(phone)});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {email, name, password, new java.lang.Long(phone)});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;

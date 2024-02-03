@@ -12,7 +12,7 @@
         <label for="userId">User ID:</label>
         <input type="text" id="userId" name="userId" required><br>
 
-        <label for="password">Password:</label>
+        <label for="password">Pin Code:</label>
         <input type="password" id="password" name="password" required><br>
 
         <input type="submit" value="Login">

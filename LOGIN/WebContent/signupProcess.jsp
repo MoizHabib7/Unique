@@ -13,7 +13,7 @@
         String email = request.getParameter("email");
         String name = request.getParameter("name");
         String password = request.getParameter("password");
-        int phone = Integer.parseInt(request.getParameter("phone"));
+        long phone = Long.parseLong(request.getParameter("phone"));
 
         // Perform user registration using the Registeration_of_User class
         Registeration_of_User registration = new Registeration_of_UserProxy().getRegisteration_of_User();

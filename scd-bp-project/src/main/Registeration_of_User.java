@@ -2,7 +2,7 @@ package main;
 import java.sql.*;
 
 public class Registeration_of_User {
-    public int register_user(String email, String name, String password, int phone) {
+    public int register_user(String email, String name, String password,long phone) {
         int userID = 0; // Initialize userID variable
 
         try {
